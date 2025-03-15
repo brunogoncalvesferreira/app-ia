@@ -11,7 +11,12 @@ export function Search({ setAnswers, setLoading }) {
     event.preventDefault();
     
     setLoading(true);
-    const model = genAi.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAi.getGenerativeModel({ 
+      model: "gemini-pro",
+      generationConfig: {
+        temperature: 0.9  ,
+      }
+    });
     await model
       .generateContent(prompt)
       .then((result) => {

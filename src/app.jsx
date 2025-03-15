@@ -5,7 +5,6 @@ import Markdown from "react-markdown";
 
 export function App() {
   const [answers, setAnswers] = useState("");
-
   const [loading, setLoading] = useState(false);
 
   function clearAnswers() {
